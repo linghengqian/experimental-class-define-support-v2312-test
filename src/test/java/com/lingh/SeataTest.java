@@ -27,7 +27,7 @@ import java.time.Duration;
 import java.util.Properties;
 import java.util.stream.Stream;
 
-@SuppressWarnings({"deprecation", "resource"})
+@SuppressWarnings({"deprecation", "resource", "SqlSourceToSinkFlow"})
 public class SeataTest {
 
     private final String jdbcUrl = "jdbc:tc:postgresql:16.2-bookworm://test-native/demo_ds_0?TC_DAEMON=true";
@@ -42,15 +42,15 @@ public class SeataTest {
             container.start();
             DataSource dataSource = createDataSource(container.getMappedPort(7091));
             addressRepository = new AddressRepository(dataSource);
-            this.initEnvironment();
-            addressRepository.assertRollbackWithTransactions();
-            addressRepository.dropTable();
+            processSuccess();
         }
     }
 
-    private void initEnvironment() throws SQLException {
+    private void processSuccess() throws SQLException, TransactionException {
         addressRepository.createTableIfNotExists();
         addressRepository.truncateTable();
+        addressRepository.assertRollbackWithTransactions();
+        addressRepository.dropTable();
     }
 
     private Connection openConnection() throws SQLException {
@@ -99,19 +99,17 @@ public class SeataTest {
         final String tenthSql = "COMMENT ON COLUMN public.undo_log.log_modified IS 'modify datetime';";
         final String eleventhSql = "CREATE SEQUENCE IF NOT EXISTS undo_log_id_seq INCREMENT BY 1 MINVALUE 1 ;";
         Stream.of(firstSql, secondSql, thirdSql, fourthSql, fifthSql, sixthSql, seventhSql, eighthSql, ninthSql, tenthSql, eleventhSql)
-                .forEachOrdered(this::executeSqlToDB);
+                .forEachOrdered(sqlString -> {
+                    try (Connection ds0Connection = openConnection()) {
+                        ds0Connection.createStatement().executeUpdate(sqlString);
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
+                });
         HikariConfig config = new HikariConfig();
         config.setDriverClassName("org.testcontainers.jdbc.ContainerDatabaseDriver");
         config.setJdbcUrl(jdbcUrl);
         HikariDataSource hikariDataSource = new HikariDataSource(config);
         return new DataSourceProxy(hikariDataSource);
-    }
-
-    private void executeSqlToDB(final String sqlString) {
-        try (Connection ds0Connection = openConnection()) {
-            ds0Connection.createStatement().executeUpdate(sqlString);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
     }
 }

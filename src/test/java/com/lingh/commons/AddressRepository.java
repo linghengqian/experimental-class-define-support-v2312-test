@@ -24,27 +24,24 @@ public final class AddressRepository {
 
     public void createTableIfNotExists() throws SQLException {
         String sql = "CREATE TABLE IF NOT EXISTS t_address (address_id BIGINT NOT NULL, address_name VARCHAR(100) NOT NULL, PRIMARY KEY (address_id))";
-        try (
-                Connection connection = dataSource.getConnection();
-                Statement statement = connection.createStatement()) {
+        try (Connection connection = dataSource.getConnection();
+             Statement statement = connection.createStatement()) {
             statement.executeUpdate(sql);
         }
     }
 
     public void dropTable() throws SQLException {
         String sql = "DROP TABLE IF EXISTS t_address";
-        try (
-                Connection connection = dataSource.getConnection();
-                Statement statement = connection.createStatement()) {
+        try (Connection connection = dataSource.getConnection();
+             Statement statement = connection.createStatement()) {
             statement.executeUpdate(sql);
         }
     }
 
     public void truncateTable() throws SQLException {
         String sql = "TRUNCATE TABLE t_address";
-        try (
-                Connection connection = dataSource.getConnection();
-                Statement statement = connection.createStatement()) {
+        try (Connection connection = dataSource.getConnection();
+             Statement statement = connection.createStatement()) {
             statement.executeUpdate(sql);
         }
     }
