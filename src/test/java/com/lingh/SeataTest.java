@@ -3,6 +3,7 @@ package com.lingh;
 import com.lingh.commons.TestShardingService;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+import io.seata.core.exception.TransactionException;
 import io.seata.rm.RMClient;
 import io.seata.rm.datasource.DataSourceProxy;
 import io.seata.tm.TMClient;
@@ -34,7 +35,7 @@ public class SeataTest {
     private TestShardingService testShardingService;
 
     @Test
-    void assertShardingInSeataTransactions() throws SQLException {
+    void assertShardingInSeataTransactions() throws SQLException, TransactionException {
         try (GenericContainer<?> container = new FixedHostPortGenericContainer<>("seataio/seata-server:2.0.0")
                 .withFixedExposedPort(26403, 8091)
                 .withExposedPorts(7091)) {

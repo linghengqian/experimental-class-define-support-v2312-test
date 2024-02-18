@@ -1,8 +1,8 @@
 package com.lingh.commons;
 
+import io.seata.core.exception.TransactionException;
 import io.seata.tm.api.GlobalTransaction;
 import io.seata.tm.api.GlobalTransactionContext;
-import lombok.SneakyThrows;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -49,8 +49,7 @@ public final class AddressRepository {
         }
     }
 
-    @SneakyThrows
-    public void assertRollbackWithTransactions() {
+    public void assertRollbackWithTransactions() throws TransactionException, SQLException {
         GlobalTransaction globalTransaction = GlobalTransactionContext.getCurrentOrCreate();
         globalTransaction.begin(60 * 1000);
         Connection connection = dataSource.getConnection();
