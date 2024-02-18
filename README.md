@@ -1,4 +1,4 @@
-- experimental-class-define-support-v2312-test
+## experimental-class-define-support-v2312-test
 
 - For https://github.com/apache/shardingsphere/pull/30138 .
 
@@ -20,4 +20,9 @@ cd ./experimental-class-define-support-v2312-test/
 ./mvnw -PgenerateMetadata -DskipNativeTests -e -T1C clean test native:metadata-copy
 ```
 
-- Log.
+- `./mvnw -e -T1C clean test` ensures that the unit test is executed normally,
+  and the errors are thrown deliberately to ensure normal rollback of the database.
+- `./mvnw -PgenerateMetadata -DskipNativeTests -e -T1C clean test native:metadata-copy` will
+  carry GraalVM Tracing Agent and `experimental-class-define-support=true` with `buildArg` to execute unit tests
+  and create GraalVM Reachability Metadata JSON file.
+- The error log is as follows.

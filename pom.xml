@@ -117,7 +117,7 @@
                                             <stage>main</stage>
                                         </disabledStages>
                                         <merge>false</merge>
-                                        <outputDirectory>${user.dir}/infra/reachability-metadata/src/main/resources/META-INF/native-image/org.apache.shardingsphere/shardingsphere-infra-reachability-metadata/</outputDirectory>
+                                        <outputDirectory>${user.dir}/src/main/resources/META-INF/native-image/io.seata/seata-all/2.0.0/</outputDirectory>
                                     </metadataCopy>
                                 </agent>
                             </configuration>
