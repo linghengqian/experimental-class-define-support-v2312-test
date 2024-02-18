@@ -18,6 +18,8 @@ cd ./experimental-class-define-support-v2312-test/
 ./mvnw -e -T1C clean test
 
 ./mvnw -PgenerateMetadata -DskipNativeTests -e -T1C clean test native:metadata-copy
+
+./mvnw -PnativeTestInSeata -T1C -e clean test
 ```
 
 - `./mvnw -e -T1C clean test` ensures that the unit test is executed normally,
@@ -25,6 +27,7 @@ cd ./experimental-class-define-support-v2312-test/
 - `./mvnw -PgenerateMetadata -DskipNativeTests -e -T1C clean test native:metadata-copy` will
   carry GraalVM Tracing Agent and `experimental-class-define-support=true` with `buildArg` to execute unit tests
   and create GraalVM Reachability Metadata JSON file.
+- `./mvnw -PnativeTestInSeata -T1C -e clean test` will execute nativeTest.
 - `./mvnw -PgenerateMetadata -DskipNativeTests -e -T1C clean test native:metadata-copy` will fail, the error log is as follows.
 
 ```shell
