@@ -1,6 +1,7 @@
 {
   "rules": [
     {"excludeClasses": "**"},
-    {"includeClasses": "io.seata.**"}
+    {"includeClasses": "io.seata.**"},
+    {"includeClasses": "com.lingh.**"}
   ]
 }

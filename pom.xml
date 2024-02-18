@@ -87,6 +87,16 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.graalvm.buildtools</groupId>
+                <artifactId>native-maven-plugin</artifactId>
+                <version>0.10.0</version>
+            </plugin>
+        </plugins>
+    </build>
+
     <profiles>
         <profile>
             <id>generateMetadata</id>
@@ -117,7 +127,9 @@
                                             <stage>main</stage>
                                         </disabledStages>
                                         <merge>false</merge>
-                                        <outputDirectory>${user.dir}/src/main/resources/META-INF/native-image/io.seata/seata-all/2.0.0/</outputDirectory>
+                                        <outputDirectory>
+                                            ${user.dir}/src/test/resources/META-INF/native-image/io.seata/seata-all/2.0.0/
+                                        </outputDirectory>
                                     </metadataCopy>
                                 </agent>
                             </configuration>
