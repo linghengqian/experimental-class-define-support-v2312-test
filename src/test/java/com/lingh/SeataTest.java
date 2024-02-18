@@ -100,8 +100,8 @@ public class SeataTest {
         final String eleventhSql = "CREATE SEQUENCE IF NOT EXISTS undo_log_id_seq INCREMENT BY 1 MINVALUE 1 ;";
         Stream.of(firstSql, secondSql, thirdSql, fourthSql, fifthSql, sixthSql, seventhSql, eighthSql, ninthSql, tenthSql, eleventhSql)
                 .forEachOrdered(sqlString -> {
-                    try (Connection ds0Connection = openConnection()) {
-                        ds0Connection.createStatement().executeUpdate(sqlString);
+                    try (Connection connection = openConnection()) {
+                        connection.createStatement().executeUpdate(sqlString);
                     } catch (SQLException e) {
                         throw new RuntimeException(e);
                     }
