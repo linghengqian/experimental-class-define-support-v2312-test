@@ -1,6 +1,6 @@
 package com.lingh;
 
-import com.lingh.commons.TestShardingService;
+import com.lingh.commons.AddressRepository;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import io.seata.core.exception.TransactionException;
@@ -32,7 +32,7 @@ public class SeataTest {
 
     private final String jdbcUrl = "jdbc:tc:postgresql:16.2-bookworm://test-native/demo_ds_0?TC_DAEMON=true";
 
-    private TestShardingService testShardingService;
+    private AddressRepository addressRepository;
 
     @Test
     void assertShardingInSeataTransactions() throws SQLException, TransactionException {
@@ -41,16 +41,16 @@ public class SeataTest {
                 .withExposedPorts(7091)) {
             container.start();
             DataSource dataSource = createDataSource(container.getMappedPort(7091));
-            testShardingService = new TestShardingService(dataSource);
+            addressRepository = new AddressRepository(dataSource);
             this.initEnvironment();
-            testShardingService.getAddressRepository().assertRollbackWithTransactions();
-            testShardingService.getAddressRepository().dropTable();
+            addressRepository.assertRollbackWithTransactions();
+            addressRepository.dropTable();
         }
     }
 
     private void initEnvironment() throws SQLException {
-        testShardingService.getAddressRepository().createTableIfNotExists();
-        testShardingService.getAddressRepository().truncateTable();
+        addressRepository.createTableIfNotExists();
+        addressRepository.truncateTable();
     }
 
     private Connection openConnection() throws SQLException {
