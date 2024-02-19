@@ -1,6 +1,7 @@
 ## experimental-class-define-support-v2312-test
 
 - For https://github.com/apache/shardingsphere/pull/30138 and https://github.com/oracle/graal/issues/8396 .
+- Also for https://github.com/apache/incubator-seata/issues/6351 .
 
 - Execute the following command on the Ubuntu 22.04.3 instance with `SDKMAN!` installed.
   Make sure you have the Docker engine installed to start the testcontainers-java container.
