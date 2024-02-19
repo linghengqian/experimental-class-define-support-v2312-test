@@ -111,7 +111,7 @@
                             <configuration>
                                 <agent>
                                     <enabled>true</enabled>
-                                    <defaultMode>Conditional</defaultMode>
+                                    <defaultMode>Standard</defaultMode>
                                     <modes>
                                         <conditional>
                                             <userCodeFilterPath>${user.dir}/user-code-filter.json</userCodeFilterPath>

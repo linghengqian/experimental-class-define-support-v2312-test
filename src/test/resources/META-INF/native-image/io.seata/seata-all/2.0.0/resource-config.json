@@ -1,0 +1,149 @@
+{
+  "resources":{
+  "includes":[{
+    "pattern":"\\QMETA-INF/druid-driver.properties\\E"
+  }, {
+    "pattern":"\\QMETA-INF/seata/io.seata.config.ExtConfigurationProvider\\E"
+  }, {
+    "pattern":"\\QMETA-INF/seata/io.seata.config.file.FileConfig\\E"
+  }, {
+    "pattern":"\\QMETA-INF/seata/io.seata.core.auth.AuthSigner\\E"
+  }, {
+    "pattern":"\\QMETA-INF/seata/io.seata.core.context.ContextCore\\E"
+  }, {
+    "pattern":"\\QMETA-INF/seata/io.seata.core.model.ResourceManager\\E"
+  }, {
+    "pattern":"\\QMETA-INF/seata/io.seata.core.model.TransactionManager\\E"
+  }, {
+    "pattern":"\\QMETA-INF/seata/io.seata.core.rpc.hook.RpcHook\\E"
+  }, {
+    "pattern":"\\QMETA-INF/seata/io.seata.core.serializer.Serializer\\E"
+  }, {
+    "pattern":"\\QMETA-INF/seata/io.seata.discovery.registry.RegistryProvider\\E"
+  }, {
+    "pattern":"\\QMETA-INF/seata/io.seata.rm.AbstractRMHandler\\E"
+  }, {
+    "pattern":"\\QMETA-INF/seata/io.seata.rm.datasource.exec.InsertExecutor\\E"
+  }, {
+    "pattern":"\\QMETA-INF/seata/io.seata.rm.datasource.undo.UndoExecutorHolder\\E"
+  }, {
+    "pattern":"\\QMETA-INF/seata/io.seata.rm.datasource.undo.UndoLogManager\\E"
+  }, {
+    "pattern":"\\QMETA-INF/seata/io.seata.rm.datasource.undo.UndoLogParser\\E"
+  }, {
+    "pattern":"\\QMETA-INF/seata/io.seata.rm.datasource.undo.parser.spi.JacksonSerializer\\E"
+  }, {
+    "pattern":"\\QMETA-INF/seata/io.seata.sqlparser.EscapeHandler\\E"
+  }, {
+    "pattern":"\\QMETA-INF/seata/io.seata.sqlparser.SQLRecognizerFactory\\E"
+  }, {
+    "pattern":"\\QMETA-INF/seata/io.seata.sqlparser.druid.SQLOperateRecognizerHolder\\E"
+  }, {
+    "pattern":"\\QMETA-INF/seata/io.seata.sqlparser.struct.TableMetaCache\\E"
+  }, {
+    "pattern":"\\QMETA-INF/seata/io.seata.sqlparser.util.DbTypeParser\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/io.seata.config.ExtConfigurationProvider\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/io.seata.config.file.FileConfig\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/io.seata.core.auth.AuthSigner\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/io.seata.core.context.ContextCore\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/io.seata.core.model.ResourceManager\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/io.seata.core.model.TransactionManager\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/io.seata.core.rpc.hook.RpcHook\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/io.seata.core.serializer.Serializer\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/io.seata.discovery.registry.RegistryProvider\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/io.seata.rm.AbstractRMHandler\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/io.seata.rm.datasource.exec.InsertExecutor\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/io.seata.rm.datasource.undo.UndoExecutorHolder\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/io.seata.rm.datasource.undo.UndoLogManager\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/io.seata.rm.datasource.undo.UndoLogParser\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/io.seata.rm.datasource.undo.parser.spi.JacksonSerializer\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/io.seata.sqlparser.EscapeHandler\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/io.seata.sqlparser.SQLRecognizerFactory\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/io.seata.sqlparser.druid.SQLOperateRecognizerHolder\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/io.seata.sqlparser.struct.TableMetaCache\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/io.seata.sqlparser.util.DbTypeParser\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/java.lang.System$LoggerFinder\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/java.net.spi.InetAddressResolverProvider\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/java.net.spi.URLStreamHandlerProvider\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/java.nio.channels.spi.SelectorProvider\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/java.sql.Driver\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/java.time.zone.ZoneRulesProvider\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org.apache.maven.surefire.spi.MasterProcessChannelProcessorFactory\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org.junit.platform.engine.TestEngine\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org.junit.platform.launcher.LauncherDiscoveryListener\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org.junit.platform.launcher.LauncherSessionListener\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org.junit.platform.launcher.PostDiscoveryFilter\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org.junit.platform.launcher.TestExecutionListener\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org.testcontainers.containers.JdbcDatabaseContainerProvider\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org.testcontainers.core.CreateContainerCmdModifier\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org.testcontainers.dockerclient.DockerClientProviderStrategy\\E"
+  }, {
+    "pattern":"\\Q\\E"
+  }, {
+    "pattern":"\\Qcom/github/dockerjava/zerodep/shaded/org/apache/hc/client5/version.properties\\E"
+  }, {
+    "pattern":"\\Qdocker-java.properties\\E"
+  }, {
+    "pattern":"\\Qfile.conf\\E"
+  }, {
+    "pattern":"\\Qjunit-platform.properties\\E"
+  }, {
+    "pattern":"\\Qlib/sqlparser/druid.jar\\E"
+  }, {
+    "pattern":"\\Qmozilla/public-suffix-list.txt\\E"
+  }, {
+    "pattern":"\\Qorg/apache/hc/client5/version.properties\\E"
+  }, {
+    "pattern":"\\Qorg/postgresql/driverconfig.properties\\E"
+  }, {
+    "pattern":"\\Qorg/slf4j/impl/StaticLoggerBinder.class\\E"
+  }, {
+    "pattern":"\\Qreference.conf\\E"
+  }, {
+    "pattern":"\\Qregistry.conf\\E"
+  }, {
+    "pattern":"\\Qsimplelogger.properties\\E"
+  }, {
+    "pattern":"\\Qtestcontainers.properties\\E"
+  }, {
+    "pattern":"java.base:\\Qjdk/internal/icu/impl/data/icudt72b/nfkc.nrm\\E"
+  }, {
+    "pattern":"jdk.jfr:\\Qjdk/jfr/internal/query/view.ini\\E"
+  }]},
+  "bundles":[]
+}
